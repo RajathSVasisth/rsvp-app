@@ -1,0 +1,28 @@
+<div class="rsvp-container">
+  <h2>RSVP Manager</h2>
+
+  <form (submit)="onSubmit(); $event.preventDefault()" class="rsvp-form">
+    <input type="text" [(ngModel)]="playerId" name="playerId" placeholder="Player ID" required />
+    <input type="text" [(ngModel)]="playerName" name="playerName" placeholder="Player Name" required />
+    
+    <select [(ngModel)]="selectedStatus" name="status">
+      <option *ngFor="let status of rsvpStatuses" [value]="status">{{ status }}</option>
+    </select>
+    
+    <button type="submit">Submit RSVP</button>
+  </form>
+
+  <div class="rsvp-counts">
+    <h3>RSVP Summary</h3>
+    <p>Total: {{ rsvpCounts.total }}</p>
+    <p>Confirmed (Yes): {{ rsvpCounts.confirmed }}</p>
+    <p>Declined (No): {{ rsvpCounts.declined }}</p>
+  </div>
+
+  <div class="confirmed-list">
+    <h3>Confirmed Attendees</h3>
+    <ul>
+      <li *ngFor="let attendee of confirmedAttendees">{{ attendee.name }}</li>
+    </ul>
+  </div>
+</div>
