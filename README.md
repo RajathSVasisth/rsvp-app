@@ -1,2 +1,2 @@
-# rsvp-angular
-An RSVP Manager Module using Angular
+# rsvp-app
+An RSVP Manager Module using Angular JS
